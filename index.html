@@ -3,53 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine.exe ❤️</title>
+<title>For My Troublemaker ❤️</title>
 
 <style>
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
-    background: radial-gradient(circle at top, #3b0719, #12030a 70%);
-    color: white;
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #18030b, #4b071d, #120208);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding: 20px;
 }
 
-.container {
-    width: 92%;
-    max-width: 500px;
+.card {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 25px;
     padding: 30px 22px;
     text-align: center;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 25px;
     backdrop-filter: blur(12px);
-    box-shadow: 0 0 40px rgba(255, 0, 80, 0.25);
+    box-shadow: 0 0 40px rgba(255,0,90,0.25);
+    position: relative;
     z-index: 2;
 }
 
 .heart {
     font-size: 70px;
-    animation: heartbeat 1.2s infinite;
+    animation: beat 1.2s infinite;
 }
 
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
+@keyframes beat {
+    0%,100% { transform: scale(1); }
     50% { transform: scale(1.18); }
 }
 
 h1 {
-    margin: 15px 0 10px;
-    color: #ff4f81;
-    font-size: 30px;
+    color: #ff668f;
+    margin: 10px 0;
 }
 
 .subtitle {
@@ -57,89 +57,91 @@ h1 {
     margin-bottom: 25px;
 }
 
-#terminal {
-    text-align: left;
+.loading {
     background: #050505;
-    border-radius: 12px;
-    padding: 18px;
-    font-family: monospace;
     color: #00ff88;
-    min-height: 125px;
+    font-family: monospace;
+    text-align: left;
+    padding: 17px;
+    border-radius: 12px;
+    line-height: 1.7;
     margin-bottom: 20px;
-    box-shadow: inset 0 0 15px rgba(0,255,100,0.15);
 }
 
 button {
     border: none;
     padding: 14px 25px;
     border-radius: 30px;
-    background: linear-gradient(45deg, #ff174f, #ff4f81);
+    background: linear-gradient(45deg, #ff174f, #ff668f);
     color: white;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(255, 23, 79, 0.4);
+    box-shadow: 0 5px 20px rgba(255,23,79,0.4);
 }
 
-button:hover {
-    transform: scale(1.06);
+button:active {
+    transform: scale(0.95);
 }
 
-#message {
+#letter {
     display: none;
     margin-top: 25px;
+    text-align: left;
     animation: fadeIn 1s ease;
 }
 
-#message h2 {
+#letter h2 {
+    text-align: center;
     color: #ff668f;
-    margin-bottom: 12px;
 }
 
-#message p {
-    line-height: 1.7;
-    color: #eee;
+.message {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #f5f5f5;
 }
 
-.code {
-    margin-top: 18px;
-    background: #080808;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: left;
-    font-family: monospace;
-    color: #00ff88;
-    font-size: 13px;
+.signature {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+    color: #ff8aaa;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.floating-heart {
+.floating {
     position: fixed;
-    bottom: -30px;
-    font-size: 20px;
-    animation: floatUp linear forwards;
+    bottom: -40px;
     pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 1;
 }
 
 @keyframes floatUp {
     from {
         transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
         opacity: 1;
     }
+
     to {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 </style>
@@ -147,58 +149,82 @@ button:hover {
 
 <body>
 
-<div class="container">
+<div class="card">
 
     <div class="heart">❤️</div>
 
     <h1>Valentine.exe</h1>
 
     <p class="subtitle">
-        A little program written specially for you 💻❤️
+        A very important message for one very special troublemaker 😂❤️
     </p>
 
-    <div id="terminal">
-        > Initializing Valentine.exe...<br>
-        > Searching for someone special...<br>
-        > Match found: YOU ❤️<br>
-        > System ready.
+    <div class="loading">
+        > Starting Valentine.exe...<br>
+        > Loading message... ██████████ 100%<br>
+        > Finding troublemaker...<br>
+        > Found: YOU 😂❤️<br>
+        > Ready.
     </div>
 
-    <button onclick="openMessage()">
-        💌 Open My Message
+    <button id="openBtn" onclick="openLetter()">
+        💌 Open Your Message
     </button>
 
-    <div id="message">
+    <div id="letter">
 
-        <h2>Happy Valentine's Day ❤️</h2>
+        <h2>Happy Valentine’s Day, troublemaker ❤️</h2>
 
-        <p>
-            If my heart were a computer, you'd be the only program
-            I'd never uninstall. 🥹❤️
-            <br><br>
+        <div class="message">
 
-            If life were code, I'd choose you as my favorite variable,
-            my favorite function, and my favorite constant.
-            <br><br>
+            <p>
+                I don’t know how you did it, but somehow you became my
+                favorite person to annoy, my favorite person to miss,
+                and unfortunately… my favorite person to talk to.
+            </p>
 
-            No matter how many bugs life throws at us,
-            I hope we keep debugging them together. 😂❤️
-            <br><br>
+            <p>
+                You’re cute, you’re stubborn, you’re annoying sometimes,
+                and you know exactly how to make me smile.
+            </p>
 
-            You mean more to me than I could ever fit into a few
-            lines of code.
-            <br><br>
+            <p>
+                And before you start feeling too special… relax! 😭😂
+            </p>
 
-            Happy Valentine's Day, my love. 🌹❤️
-        </p>
+            <p>
+                I’m only saying all this because it’s Valentine’s Day.
+                Tomorrow I might go back to disturbing you normally.
+            </p>
 
-        <div class="code">
-            if (you == myLove) {<br>
-            &nbsp;&nbsp;heart.status = "HAPPY";<br>
-            &nbsp;&nbsp;love++;<br>
-            &nbsp;&nbsp;future = "TOGETHER";<br>
-            }
+            <p>
+                But seriously, I’m happy I have you. ❤️
+            </p>
+
+            <p>
+                Keep being the beautiful trouble you are. 😌
+            </p>
+
+            <p>
+                Happy Valentine’s Day, babe. ❤️🌹
+            </p>
+
+            <p>
+                Now come and collect your virtual hug before I change
+                my mind. 🫂
+            </p>
+
         </div>
+
+        <div class="signature">
+            Made with ❤️ and a little bit of code 😂💻
+        </div>
+
+        <br>
+
+        <button onclick="hug()">
+            🫂 Collect Your Hug
+        </button>
 
     </div>
 
@@ -206,72 +232,65 @@ button:hover {
 
 <script>
 
-function openMessage() {
+function openLetter() {
 
-    const message = document.getElementById("message");
+    document.getElementById("letter").style.display = "block";
 
-    message.style.display = "block";
+    document.getElementById("openBtn").innerHTML =
+        "❤️ Message Opened ❤️";
+
+    document.getElementById("openBtn").disabled = true;
 
     createHearts(25);
 
-    const button = document.querySelector("button");
-
-    button.innerHTML = "❤️ Message Unlocked ❤️";
-
-    button.disabled = true;
+    setTimeout(function() {
+        document.getElementById("letter").scrollIntoView({
+            behavior: "smooth"
+        });
+    }, 300);
 }
 
-function createHearts(number) {
+function hug() {
 
-    for (let i = 0; i < number; i++) {
+    createHearts(50);
 
-        const heart = document.createElement("div");
+    alert("🫂 Virtual hug successfully delivered! ❤️😂");
 
-        heart.className = "floating-heart";
+}
+
+function createHearts(amount) {
+
+    for (let i = 0; i < amount; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "floating";
+
+        let emojis = ["❤️", "💕", "💗", "💖", "🌹"];
 
         heart.innerHTML =
-            Math.random() > 0.5 ? "❤️" : "💕";
+            emojis[Math.floor(Math.random() * emojis.length)];
 
         heart.style.left =
             Math.random() * 100 + "vw";
 
+        heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
         heart.style.animationDuration =
             (4 + Math.random() * 5) + "s";
 
-        heart.style.fontSize =
-            (15 + Math.random() * 25) + "px";
-
         document.body.appendChild(heart);
 
-        setTimeout(() => {
+        setTimeout(function() {
             heart.remove();
-        }, 9000);
+        }, 10000);
     }
 }
 
-// Continuous background hearts
-
-setInterval(() => {
-
-    const heart = document.createElement("div");
-
-    heart.className = "floating-heart";
-
-    heart.innerHTML = "❤️";
-
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
-    heart.style.animationDuration =
-        (6 + Math.random() * 5) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 11000);
-
-}, 1200);
+setInterval(function() {
+    createHearts(1);
+}, 1800);
 
 </script>
 
